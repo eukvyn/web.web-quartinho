@@ -1,6 +1,16 @@
-import './assets/main.css'
+import { createApp } from 'vue';
+import DefaultTemplate from './templates/Default.vue'
+import router from './router'
+import vuex from './store'
+import Toast from "vue-toastification";
+import "./plugins/vee-validate"; 
 
-import { createApp } from 'vue'
-import App from './App.vue'
+import "vue-toastification/dist/index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
-createApp(App).mount('#app')
+let app = createApp(DefaultTemplate)
+app.use(router).use(vuex).use(Toast);
+
+app.mount('#app')
