@@ -1,4 +1,3 @@
-// import axiosClient from '@/axios'
 import axios from 'axios'
 
 const register = async user => {

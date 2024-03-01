@@ -2,10 +2,10 @@
     <Root>
         <div v-for="(property, index) in properties" :key="index" class="col-md-6">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
+                <div class="col col-lg-8 p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary-emphasis">R${{ property.rental_price }} por mês</strong>
                     <h3 class="mb-0">{{ property.title }}</h3>
-                    <div class="mb-1 text-body-secondary"><i class="bi bi-geo-alt-fill"></i>{{ property.address }}</div>
+                    <div class="mb-1 text-body-secondary text-truncate"><i class="bi bi-geo-alt-fill"></i>{{ property.address }}</div>
                     <p class="card-text mb-auto text-truncate">{{ property.description }}</p>
                     <div class="col-xs-12 m-b-15 d-flex align-items-center gap-3">
                         <span data-toggle="tooltip" data-placement="top" title=""
@@ -23,9 +23,9 @@
                         <i class="bi bi-caret-right-fill"></i>
                     </router-link>
                 </div>
-                <div class="col-auto d-none d-lg-block">
+                <div class="col-4 d-none d-lg-block">
                     <img v-if="property.images.length > 0"
-                        :src="`${storageUrl}/${property.images[0].image_path}`" width="200" height="250" alt="Property Image">
+                        :src="`${storageUrl}/${property.images[0].image_path}`" width="215" height="250" alt="Property Image">
                 </div>
             </div>
         </div>

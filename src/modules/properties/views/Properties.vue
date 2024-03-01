@@ -7,11 +7,11 @@
 					que
 					estejam interessadas em avaliar ou entrar em contato.</p>
 				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-					<router-link class="link-underline link-underline-opacity-0" :to="{ name: 'propertiesAdd' }">
+					<a class="link-underline link-underline-opacity-0" href="/properties/add">
 						<button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">
 							Quero Anunciar
 						</button>
-					</router-link>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -71,6 +71,10 @@ export default {
 		if (this.$route.query.loginNow === 'true') {
 			this.toast.success("Login Realizado com Sucesso!");
 			this.$router.replace({ query: { ...this.$route.query, loginNow: undefined } });
+		}
+		if (this.$route.query.permission === 'denied') {
+			this.toast.error("Você não tem permissão para acessar esse recurso!");
+			this.$router.replace({ query: { ...this.$route.query, permission: undefined } });
 		}
 	},
 	methods: {

@@ -17,9 +17,8 @@
                 </Field>
             </div>
             <div class="form-floating mb-3">
-                <Field name="Senha"
-                    :rules="{ required: true, min: 8, regex: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).*$/ }"
-                    class="form-control rounded-3" id="floatingInputPasswordRegister">
+                <Field name="Senha" :rules="{ required: true }" class="form-control rounded-3"
+                    id="floatingInputPasswordRegister">
                     <template #default="{ field, errors }">
                         <div class="input-group">
                             <input spellcheck="false" autocorrect="off" autocapitalize="off" v-bind="field"
@@ -32,11 +31,7 @@
                             </button>
                         </div>
                         <span class="error-message" v-if="errors.length">
-                            <p v-if="errors[0] === 'O campo Senha possui um formato inválido'">
-                                Deve conter no mínimo 1 número, 1 maiúscula, 1 minúscula e 1 caractere
-                                especial
-                            </p>
-                            <p v-else>
+                            <p>
                                 {{ errors[0] }}
                             </p>
                         </span>
@@ -73,6 +68,9 @@ export default {
         changeTab() {
             this.$emit('changeTab')
         },
+        toggleShow() {
+			this.showPassword = !this.showPassword;
+		},
         async submitLogin(values) {
             try {
                 const user = {
@@ -81,7 +79,11 @@ export default {
                 }
                 const currentRoute = this.$router.currentRoute.value.fullPath
                 await this.login(user);
-                window.location.replace(currentRoute + "?loginNow=true");
+                if (this.$route.query.redirect) {
+                    window.location.replace(this.$route.query.redirect + "?loginNow=true");
+                } else {
+                    window.location.replace(currentRoute + "?loginNow=true");
+                }
             } catch (error) {
                 if (error.response.data.message === 'The provided credentials are incorrect.') {
                     this.toast.error("Credenciais Inválidas!");

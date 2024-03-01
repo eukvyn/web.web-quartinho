@@ -1,4 +1,4 @@
 export default {
-    user: JSON.parse(localStorage.getItem('user')) || null,
-    token: localStorage.getItem('token') || null,
+    user: JSON.parse(localStorage.getItem('user')) || {},
+    token: localStorage.getItem('token') || '',
 }

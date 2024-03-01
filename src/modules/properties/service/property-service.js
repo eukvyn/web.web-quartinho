@@ -12,6 +12,10 @@ const get = async propertyId => {
     return await axiosClient.get(`/properties/${propertyId}`)
 }
 
+const deleteProperty = async propertyId => {
+    return await axiosClient.delete(`/properties/${propertyId}`)
+}
+
 const index = async filter => {
     const config = {
         params: {},
@@ -44,6 +48,7 @@ export default {
     add,
     edit,
     get,
+    deleteProperty,
     index,
     getComments,
     addComment,

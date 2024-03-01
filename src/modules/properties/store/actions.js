@@ -40,6 +40,19 @@ export default {
         }
     },
 
+    async deleteProperty({ dispatch }, propertyId) {
+        try {
+            const response = await propertyService.deleteProperty(propertyId)
+            if (response.data) {
+                dispatch('getProperties')
+                return response.data
+            }
+        } catch (error) {
+            console.error('Error during delete property:', error)
+            throw error
+        }
+    },
+
     async getPropertyComments({ commit }, { propertyId, filter = '' }) {
         try {
             const response = await propertyService.getComments(propertyId, filter);
