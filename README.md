@@ -3,7 +3,7 @@
 Este projeto é o frontend da aplicação WebQuartinho, desenvolvida como parte de um desafio para uma vaga de estágio na empresa WebQuarto. O projeto tem como objetivo fornecer uma interface de usuário para interação com a API do WebQuartinho, permitindo a visualização, criação, edição e exclusão de anúncios de quartos e imóveis para locação.
 
 ## Tecnologias Utilizadas
-
+![Node](https://img.shields.io/badge/Node-v18.19.0-brightgreen) ![npm](https://img.shields.io/badge/npm-v10.2.3-green)
 -   **Vue 3**: Utilizado para a construção da interface do usuário, aproveitando os recursos reativos e o sistema de componentes para uma experiência de usuário dinâmica.
 -   **Vite**: Como ferramenta de build e servidor de desenvolvimento local, oferecendo hot reload e uma configuração simplificada.
 -   **Axios**: Para realizar as requisições HTTP à API do WebQuartinho, permitindo a comunicação entre o frontend e o backend.
