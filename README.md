@@ -52,7 +52,7 @@ ou, se estiver usando o yarn:
 yarn dev
 ```
 
-A aplicação estará disponível em http://localhost:3000.
+A aplicação estará disponível em http://localhost:5173.
 
 ### Executando o Projeto
 
