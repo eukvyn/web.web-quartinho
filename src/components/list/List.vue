@@ -15,7 +15,7 @@
                         </span>
                         <span data-toggle="tooltip" data-placement="top" class="icons pull">
                             <i class="bi bi-star-fill text-warning me-1"></i>
-                            <span>{{ Number.parseFloat(property.comments_avg_rating) || '0' }}</span>
+                            <span>{{ Number.parseFloat(property.comments_avg_rating).toFixed(1) || '0' }}</span>
                         </span>
                     </div>
                     <router-link class="link-underline link-underline-opacity-0" :to="`/property/${property.id}`">
